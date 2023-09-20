@@ -1,4 +1,6 @@
 CREATE DATABASE ordinario;
+
+--@block
 USE ordinario;
 
 --@block
@@ -15,21 +17,33 @@ CREATE TABLE users (
 );
 
 --@block
-DESCRIBE users
---@block
-SELECT * FROM users;
+CREATE TABLE imagenes (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(255),
+    imagen LONGBLOB
+);
 
---@block
-INSERT INTO users (id, name, apellido_paterno, apellido_materno, telefono, cumpleanos, correo, username, password ) VALUES (1, 'user1@gmail.com', 'user1', '1234');
-
---@block
-DROP TABLE users;
 --@block
 CREATE TABLE articles (
     id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(40) NOT NULL,
     content VARCHAR(100) NOT NULL
 );
+
+--@block
+DESCRIBE users
+--@block
+SELECT * FROM users;
+
+--@block
+SELECT * FROM imagenes
+
+--@block
+INSERT INTO users (id, name, apellido_paterno, apellido_materno, telefono, cumpleanos, correo, username, password ) VALUES (1, 'user1@gmail.com', 'user1', '1234');
+
+--@block
+DROP TABLE users;
+
 --@block
 DESCRIBE articles
 --@block
